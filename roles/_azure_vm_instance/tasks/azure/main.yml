@@ -11,7 +11,7 @@
 
 - name: Gather list of target machines
   azure_rm_virtualmachine_info:
-    tags: 'role:{{ target_role }}'
+    subscription_id: "{{ subscription_id }}"
   register: search_results
 
 - debug:
