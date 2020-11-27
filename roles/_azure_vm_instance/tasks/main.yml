@@ -1,0 +1,11 @@
+---
+- name: Ensure that cloud is set
+  fail:
+    msg: "cloud must be one of: aws, azure"
+  when:
+    - cloud != "aws"
+    - cloud != "azure"
+# currently, only Azure is supported
+- name: Include azure tasks
+  include_tasks: azure/main.yml
+  when: cloud == 'azure'

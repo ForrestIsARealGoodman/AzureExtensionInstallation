@@ -1,0 +1,4 @@
+---
+vault_url: 'https://wem-production-keyvault.vault.azure.net/'
+secretname: 'AdminPassword'
+nic_filter: 'private'

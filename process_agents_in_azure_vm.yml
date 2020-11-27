@@ -1,0 +1,6 @@
+---
+# ansible-playbook process_agents_in_azure_vm.yml
+- hosts: localhost
+  gather_facts: yes
+  roles:
+    - role: _azure_vm_instance

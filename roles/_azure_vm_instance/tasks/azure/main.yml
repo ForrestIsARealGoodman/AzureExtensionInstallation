@@ -1,0 +1,30 @@
+---
+- name: set fact to reduce the verbosity of the variables
+  set_fact:
+    azure_client_id: "{{ lookup('ini',  'client_id section=default  file={{ ansible_env.HOME }}/.azure/credentials') }}"
+    azure_secret_value: "{{ lookup('ini',  'secret section=default  file={{ ansible_env.HOME }}/.azure/credentials') }}"
+    azure_tenant_id: "{{ lookup('ini',  'tenant section=default  file={{ ansible_env.HOME }}/.azure/credentials') }}"
+
+#- debug: 
+#    msg: vm_password[{{vm_password}}]
+
+
+- name: Gather list of target machines
+  azure_rm_virtualmachine_info:
+    tags: 'role:{{ target_role }}'
+  register: search_results
+
+- debug:
+    var: search_results
+
+- name: Fail if search_results yields nothing
+  fail:
+    msg: "No results"
+  when: search_results.vms | length == 0
+
+- name: Create list of all targeted servers based on filters above
+  set_fact:
+    target_machines: "{{ search_results.vms }}"
+
+- debug:
+    var: target_machines
