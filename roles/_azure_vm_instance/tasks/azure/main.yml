@@ -1,5 +1,8 @@
 ---
-
+- name: Gather list of target machines
+  azure_rm_virtualmachine_info:
+    tags: wem
+  register: search_results
 - debug:
     var: search_results
 
