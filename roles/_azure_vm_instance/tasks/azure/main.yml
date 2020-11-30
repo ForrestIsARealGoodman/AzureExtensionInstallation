@@ -1,6 +1,6 @@
 ---
 - name: Gather list of target machines
-  azure.azcollection.azure_rm_virtualmachine_info:
+  azure_rm_virtualmachine_info:
     subscription_id: "{{ subscription_id }}"
   register: search_results
 
