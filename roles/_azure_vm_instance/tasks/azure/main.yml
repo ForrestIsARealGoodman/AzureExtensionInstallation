@@ -1,8 +1,4 @@
 ---
-- name: Gather list of target machines
-  azure_rm_virtualmachine_info:
-    subscription_id: "{{ subscription_id }}"
-  register: search_results
 
 - debug:
     var: search_results
