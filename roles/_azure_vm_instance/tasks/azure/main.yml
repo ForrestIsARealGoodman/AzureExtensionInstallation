@@ -3,7 +3,6 @@
   azure.azcollection.azure_rm_virtualmachine_info:
     subscription_id: "{{ subscription_id }}"
     resource_group: "wem-customers-RG-1"
-    name: "Breeze-C"
   register: search_results
 
 - debug:
