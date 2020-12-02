@@ -18,5 +18,12 @@
   set_fact:
     target_machines: "{{ search_results.vms }}"
 
-- debug:
-    var: target_machines
+- name: List VM info
+  loop: '{{ target_machines }}'
+  loop_control:
+    loop_var: current_instance
+    debug:
+      var_1: current_instance.os_type
+      var_2: current_instance.image.id
+      var_3: current_instance.image.offer
+      var_4: current_instance.image.sku
