@@ -18,5 +18,5 @@
     target_machines: "{{ search_results.vms }}"
 
 - debug:
-    msg: "os type: {{ item.os_type }} - id: {{ item.image.id }}  "
+    msg: "os type: {{ item.os_type }} "
   with_items: '{{ target_machines }}'
