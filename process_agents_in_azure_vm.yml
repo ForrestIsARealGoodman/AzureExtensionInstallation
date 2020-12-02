@@ -2,5 +2,8 @@
 # ansible-playbook process_agents_in_azure_vm.yml -e "cloud=azure subscription_id=7b2a5703-33b1-41ca-9b1a-b38fb1003861"
 - hosts: localhost
   gather_facts: yes
+  vars:
+    cloud: 'azure'
+    subscription_id: '7b2a5703-33b1-41ca-9b1a-b38fb1003861'
   roles:
     - role: _azure_vm_instance

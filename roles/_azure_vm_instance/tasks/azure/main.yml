@@ -1,7 +1,9 @@
 ---
 - name: Gather list of target machines
-  azure_rm_virtualmachine_info:
+  azure.azcollection.azure_rm_virtualmachine_info:
     subscription_id: "{{ subscription_id }}"
+    resource_group: "WEM-CUSTOMERS-RG-1"
+    name: "customer-09d3nu1yo5x1-console-cloud124build6222"
   register: search_results
 
 - debug:
