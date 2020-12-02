@@ -19,5 +19,5 @@
     target_machines: "{{ search_results.vms }}"
 
 - debug:
-    msg: "os type: {{ item.os_type }} - id: {{ item.image.id }} - offer: {{ item.image.sku }} - sku: {{ item.image.sku }} "
+    msg: "os type: {{ item.os_type }} - id: {{ item.image.id }}  "
   with_items: '{{ target_machines }}'
