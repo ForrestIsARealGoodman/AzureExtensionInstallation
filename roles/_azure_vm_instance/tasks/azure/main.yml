@@ -2,7 +2,7 @@
 - name: Gather list of target machines
   azure.azcollection.azure_rm_virtualmachine_info:
     subscription_id: "{{ subscription_id }}"
-    resource_group: "wem-customers-RG-1"
+    resource_group: "chao-test"
   register: search_results
 
 - debug:
